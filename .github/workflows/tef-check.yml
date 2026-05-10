@@ -1,0 +1,29 @@
+name: Check TEF Registration
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  check-tef:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get repository files
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install packages
+        run: pip install -r requirements.txt
+
+      - name: Run TEF notifier
+        env:
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+          RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
+        run: python tef-Notifier.py
