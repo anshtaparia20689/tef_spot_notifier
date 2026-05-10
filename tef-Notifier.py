@@ -7,9 +7,9 @@ import os
 
 URL = "https://www.alliancefrancaise.ca/en/language/exams/tef-canada/"
 
-SENDER_EMAIL = os.environ["anshtaparia2006@gmail.com"]
-APP_PASSWORD = os.environ["awxw jilu ydfr mmux"]
-RECEIVER_EMAIL = os.environ["anshtaparia2006@gmail.com"]
+SENDER_EMAIL = os.environ["SENDER_EMAIL"]
+APP_PASSWORD = os.environ["APP_PASSWORD"]
+RECEIVER_EMAIL = os.environ["RECEIVER_EMAIL"]
 
 
 
