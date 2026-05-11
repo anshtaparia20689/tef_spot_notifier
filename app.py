@@ -1,12 +1,14 @@
 import os
 from flask import Flask
 from tef_notifier import check_tef_page
+import threading
 
 app = Flask(__name__)
 
 @app.route("/run")
 def run():
-    check_tef_page()
+    thread = threading.Thread(target=check_tef_page)
+    thread.start()
     return "OK", 200
 
 if __name__ == "__main__":
