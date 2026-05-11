@@ -50,6 +50,5 @@ def check_tef_page():
         print("Possible update for June Registration!")
         send_email()
 
-check_tef_page()
 
 
