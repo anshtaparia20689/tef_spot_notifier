@@ -49,6 +49,7 @@ def check_tef_page():
     else:
         print("Possible update for June Registration!")
         send_email()
+check_tef_page()
 
 
 
